@@ -38,7 +38,7 @@ sub unimport {
 		elsif ($features{$pragma}) {
 			feature->unimport($pragma);
 		}
-		elsif (not $grandfathered{$pragma} && $grandfathered{$pragma} < $] ) {
+		elsif (not $grandfathered{$pragma}) {
 			carp "Can't disable unknown feature $pragma, ignoring";
 		}
 	}
