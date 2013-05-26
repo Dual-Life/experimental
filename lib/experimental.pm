@@ -21,7 +21,10 @@ sub import {
 		elsif ($features{$pragma}) {
 			feature->import($pragma);
 		}
-		elsif (not $grandfathered{$pragma} or $grandfathered{$pragma} > $]) {
+		if ($grandfathered{$pragma} and $grandfathered{$pragma} > $]) {
+			croak "Need perl $] for feature $pragma";
+		}
+		else {
 			croak "Can't enable unknown feature $pragma";
 		}
 	}
