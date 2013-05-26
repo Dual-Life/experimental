@@ -60,5 +60,30 @@ sub unimport {
 
 =head1 DESCRIPTION
 
-...
+This pragma provides an easy and convenient way to enable or disable experimental features.
+
+=head2 Disclaimer
+
+Because of the nature of the features it enables, forward compatability can not be guaranteed in any way.
+
+=head2 Use cases
+
+=over 4
+
+=item * smartmatch
+
+This is effectively equivalent to
+
+ no if $] >= 5.017011, warnings => 'experimental::smartmatch';
+
+Except that on versions that do no support smartmatch, it will give an explicit error.
+
+=item * lexical_subs
+
+This is equivalent to
+
+ use feature 'lexical_subs';
+ no warnings 'experimental::lexical_subs';
+
+=back
 
