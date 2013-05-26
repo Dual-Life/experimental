@@ -7,7 +7,7 @@ use Carp qw/croak carp/;
 my $has_feature = eval { require feature };
 my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offsets;
 my %features = map { $_ => 1 } $has_feature ? keys %feature::feature : ();
-my %grandfathered = ( smartmatch => 5.010001 );
+my %grandfathered = ( smartmatch => 5.010001, array_base => 5);
 
 sub import {
 	my ($self, @pragmas) = @_;
