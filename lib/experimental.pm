@@ -20,7 +20,7 @@ sub import {
 		elsif ($features{$pragma}) {
 			feature->import($pragma);
 		}
-		elsif (not $grandfathered{$pragma} && $grandfathered{$pragma} < $] ) {
+		elsif (not $grandfathered{$pragma} or $grandfathered{$pragma} > $]) {
 			croak "Can't enable unknown feature $pragma";
 		}
 	}
