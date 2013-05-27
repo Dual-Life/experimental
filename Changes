@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.003     2013-05-27 13:58:37 Europe/Amsterdam
           More fixing for older perl versions
 
 0.002     2013-05-27 02:07:46 Europe/Amsterdam
