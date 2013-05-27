@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.002     2013-05-27 02:07:46 Europe/Amsterdam
           Fix grandfathering clause
           Added basic tests
 
