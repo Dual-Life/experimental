@@ -1,14 +1,13 @@
 package experimental;
 use strict;
 use warnings;
-eval { require feature };
 
 use Carp qw/croak carp/;
 
 my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offsets;
-my %features = map { $_ => 1 } do { no warnings 'once'; keys %feature::feature; };
+my %features = map { $_ => 1 } eval { require feature } && keys %feature::feature;
 
-my %grandfathered = ( smartmatch => 5.010001, array_base => 5);
+my %grandfathered = (smartmatch => 5.010001, array_base => 5);
 
 sub import {
 	my ($self, @pragmas) = @_;
@@ -21,11 +20,11 @@ sub import {
 		elsif ($features{$pragma}) {
 			feature->import($pragma);
 		}
-		elsif ($grandfathered{$pragma}) {
-			croak "Need perl $grandfathered{$pragma} for feature $pragma" if $grandfathered{$pragma} > $];
-		}
-		else {
+		elsif (not $grandfathered{$pragma}) {
 			croak "Can't enable unknown feature $pragma";
+		}
+		elsif ($grandfathered{$pragma} > $]) {
+			croak "Need perl $grandfathered{$pragma} for feature $pragma";
 		}
 	}
 	return;
