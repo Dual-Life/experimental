@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.004     2013-06-05 11:42:40 Europe/Amsterdam
           Give better error on legacy perls
 
 0.003     2013-05-27 13:58:37 Europe/Amsterdam
