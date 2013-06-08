@@ -2,6 +2,9 @@ Revision history for experimental
 
 {{$NEXT}}
 
+0.005     2013-06-09 00:40:53 Europe/Amsterdam
+          Grandfathered lexical_topic
+
 0.004     2013-06-05 11:42:40 Europe/Amsterdam
           Give better error on legacy perls
 
