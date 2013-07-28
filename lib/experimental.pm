@@ -63,7 +63,7 @@ This pragma provides an easy and convenient way to enable or disable experimenta
 
 =head2 Disclaimer
 
-Because of the nature of the features it enables, forward compatability can not be guaranteed in any way.
+Because of the nature of the features it enables, forward compatibility can not be guaranteed in any way.
 
 =head2 Use cases
 
