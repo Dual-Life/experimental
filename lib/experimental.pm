@@ -2,10 +2,11 @@ package experimental;
 use strict;
 use warnings;
 
+use feature ();
 use Carp qw/croak carp/;
 
 my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offsets;
-my %features = map { $_ => 1 } eval { require feature } && keys %feature::feature;
+my %features = map { $_ => 1 } keys %feature::feature;
 
 my %grandfathered = (smartmatch => 5.010001, lexical_topic => 5.010000, array_base => 5);
 

@@ -1,6 +1,7 @@
 Revision history for experimental
 
 {{$NEXT}}
+          Hard require 5.010
 
 0.005     2013-06-09 00:40:53 Europe/Amsterdam
           Grandfathered lexical_topic
