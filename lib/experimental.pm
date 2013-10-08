@@ -1,4 +1,5 @@
 package experimental;
+
 use strict;
 use warnings;
 
@@ -14,16 +15,21 @@ my %grandfathered = (
 	array_base    => 5
 );
 
+my %additional_features = (
+);
+
 sub import {
 	my ($self, @pragmas) = @_;
 
 	for my $pragma (@pragmas) {
 		if ($warnings{"experimental::$pragma"}) {
 			warnings->unimport("experimental::$pragma");
-			feature->import($pragma) if $features{$pragma};
+			my @features = grep { $features{$_} } $pragma, @{ $additional_features{$pragma} || [] };
+			feature->import(@features) if @features;
 		}
 		elsif ($features{$pragma}) {
 			feature->import($pragma);
+			feature->import(@{ $additional_features{$pragma} }) if $additional_features{$pragma};
 		}
 		elsif (not $grandfathered{$pragma}) {
 			croak "Can't enable unknown feature $pragma";
@@ -41,10 +47,11 @@ sub unimport {
 	for my $pragma (@pragmas) {
 		if ($warnings{"experimental::$pragma"}) {
 			warnings->import("experimental::$pragma");
-			feature->unimport($pragma) if $features{$pragma};
+			feature->unimport(grep { $features{$_} } $pragma, @{ $additional_features{$pragma} || [] });
 		}
 		elsif ($features{$pragma}) {
 			feature->unimport($pragma);
+			feature->unimport(@{ $additional_features{$pragma} }) if $additional_features{$pragma};
 		}
 		elsif (not $grandfathered{$pragma}) {
 			carp "Can't disable unknown feature $pragma, ignoring";
