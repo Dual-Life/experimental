@@ -16,6 +16,7 @@ my %grandfathered = (
 );
 
 my %additional_features = (
+	postderef  => ['postderef_qq'],
 );
 
 sub import {
