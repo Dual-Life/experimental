@@ -10,9 +10,10 @@ my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offset
 my %features = map { $_ => 1 } keys %feature::feature;
 
 my %grandfathered = (
+	autoderef     => 5.014000,
 	smartmatch    => 5.010001,
 	lexical_topic => 5.010000,
-	array_base    => 5
+	array_base    => 5,
 );
 
 my %additional_features = (
