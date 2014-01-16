@@ -18,6 +18,7 @@ my %grandfathered = (
 
 my %additional = (
 	postderef  => ['postderef_qq'],
+	switch     => ['smartmatch'],
 );
 
 sub _enable {
