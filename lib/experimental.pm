@@ -16,48 +16,59 @@ my %grandfathered = (
 	array_base    => 5,
 );
 
-my %additional_features = (
+my %additional = (
 	postderef  => ['postderef_qq'],
 );
+
+sub _enable {
+	my $pragma = shift;
+	if ($warnings{"experimental::$pragma"}) {
+		warnings->unimport("experimental::$pragma");
+		feature->import($pragma) if exists $features{$pragma};
+		_enable(@{ $additional{$pragma} }) if $additional{$pragma};
+	}
+	elsif ($features{$pragma}) {
+		feature->import($pragma);
+		_enable(@{ $additional{$pragma} }) if $additional{$pragma};
+	}
+	elsif (not $grandfathered{$pragma}) {
+		croak "Can't enable unknown feature $pragma";
+	}
+	elsif ($grandfathered{$pragma} > $]) {
+		croak "Need perl $grandfathered{$pragma} for feature $pragma";
+	}
+}
 
 sub import {
 	my ($self, @pragmas) = @_;
 
 	for my $pragma (@pragmas) {
-		if ($warnings{"experimental::$pragma"}) {
-			warnings->unimport("experimental::$pragma");
-			my @features = grep { $features{$_} } $pragma, @{ $additional_features{$pragma} || [] };
-			feature->import(@features) if @features;
-		}
-		elsif ($features{$pragma}) {
-			feature->import($pragma);
-			feature->import(@{ $additional_features{$pragma} }) if $additional_features{$pragma};
-		}
-		elsif (not $grandfathered{$pragma}) {
-			croak "Can't enable unknown feature $pragma";
-		}
-		elsif ($grandfathered{$pragma} > $]) {
-			croak "Need perl $grandfathered{$pragma} for feature $pragma";
-		}
+		_enable($pragma);
 	}
 	return;
+}
+
+sub _disable {
+	my $pragma = shift;
+	if ($warnings{"experimental::$pragma"}) {
+		warnings->import("experimental::$pragma");
+		feature->unimport($pragma) if exists $features{$pragma};
+		_disable(@{ $additional{$pragma} }) if $additional{$pragma};
+	}
+	elsif ($features{$pragma}) {
+		feature->unimport($pragma);
+		_disable(@{ $additional{$pragma} }) if $additional{$pragma};
+	}
+	elsif (not $grandfathered{$pragma}) {
+		carp "Can't disable unknown feature $pragma, ignoring";
+	}
 }
 
 sub unimport {
 	my ($self, @pragmas) = @_;
 
 	for my $pragma (@pragmas) {
-		if ($warnings{"experimental::$pragma"}) {
-			warnings->import("experimental::$pragma");
-			feature->unimport(grep { $features{$_} } $pragma, @{ $additional_features{$pragma} || [] });
-		}
-		elsif ($features{$pragma}) {
-			feature->unimport($pragma);
-			feature->unimport(@{ $additional_features{$pragma} }) if $additional_features{$pragma};
-		}
-		elsif (not $grandfathered{$pragma}) {
-			carp "Can't disable unknown feature $pragma, ignoring";
-		}
+		_disable($pragma);
 	}
 	return;
 }
