@@ -78,7 +78,7 @@ sub unimport {
 
 #ABSTRACT: Experimental features made easy
 
-=head1 SYNOPSYS
+=head1 SYNOPSIS
 
  use experimental 'lexical_subs', 'smartmatch';
  my sub foo { $_[0] ~~ 1 }
@@ -91,11 +91,9 @@ This pragma provides an easy and convenient way to enable or disable experimenta
 
 Because of the nature of the features it enables, forward compatibility can not be guaranteed in any way.
 
-=head2 Use cases
+=head2 Options
 
-=over 4
-
-=item * smartmatch
+=head3 smartmatch
 
 This is effectively equivalent to
 
@@ -103,12 +101,10 @@ This is effectively equivalent to
 
 Except that on versions that do no support smartmatch, it will give an explicit error.
 
-=item * lexical_subs
+=head3 lexical_subs
 
 This is equivalent to
 
  use feature 'lexical_subs';
  no warnings 'experimental::lexical_subs';
-
-=back
 
