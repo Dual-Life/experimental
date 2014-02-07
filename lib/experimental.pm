@@ -85,11 +85,38 @@ sub unimport {
 
 =head1 DESCRIPTION
 
-This pragma provides an easy and convenient way to enable or disable experimental features.
+This pragma provides an easy and convenient way to enable or disable
+experimental features.
+
+Every version of perl has some number of features present but considered
+"experimental."  For much of the life of Perl 5, this was only a designation
+found in the documentation.  Starting in Perl v5.10.0, and more aggressively in
+v5.18.0, experimental features were placed behind pragmata used to enable the
+feature and disable associated warnings.
+
+The C<experimental> pragma exists to combine the required incantations into a
+single interface stable across releases of perl.  For every experimental
+feature, this should enable the feature and silence warnings for the enclosing
+lexical scope:
+
+  use experimental 'feature-name';
+
+To disable the feature and, if applicable, re-enable any warnings, use:
+
+  no experimental 'feature-name'
+
+The supported features, documented further below, are:
+
+	array_base    - allow the use of $[ to change the starting index of @array
+	autoderef     - allow push, each, keys, and other built-ins on references
+	lexical_topic - allow the use of lexical $_ via "my $_"
+	postderef     - allow the use of postfix dereferencing expressions
+	smartmatch    - allow the use of ~~, given, and when
 
 =head2 Disclaimer
 
-Because of the nature of the features it enables, forward compatibility can not be guaranteed in any way.
+Because of the nature of the features it enables, forward compatibility can not
+be guaranteed in any way.
 
 =head2 Options
 
