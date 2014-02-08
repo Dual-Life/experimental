@@ -38,7 +38,7 @@ sub _enable {
 		croak "Can't enable unknown feature $pragma";
 	}
 	elsif ($min_version{$pragma} > $]) {
-		croak "Need perl $min_version{$pragma} for feature $pragma";
+		croak "Need perl version $min_version{$pragma} or later for feature $pragma";
 	}
 }
 
