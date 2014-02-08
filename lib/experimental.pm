@@ -105,7 +105,7 @@ lexical scope:
 
 To disable the feature and, if applicable, re-enable any warnings, use:
 
-  no experimental 'feature-name'
+  no experimental 'feature-name';
 
 The supported features, documented further below, are:
 
