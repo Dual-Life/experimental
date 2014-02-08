@@ -14,6 +14,7 @@ my %min_version = (
 	autoderef     => 5.014000,
 	lexical_topic => 5.010000,
 	smartmatch    => 5.010001,
+	signatures    => 5.019009, # change to 5.20.0 someday? -- rjbs, 2014-02-08
 );
 
 my %additional = (
