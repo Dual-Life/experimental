@@ -9,11 +9,11 @@ use Carp qw/croak carp/;
 my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offsets;
 my %features = map { $_ => 1 } keys %feature::feature;
 
-my %grandfathered = (
-	autoderef     => 5.014000,
-	smartmatch    => 5.010001,
-	lexical_topic => 5.010000,
+my %min_version = (
 	array_base    => 5,
+	autoderef     => 5.014000,
+	lexical_topic => 5.010000,
+	smartmatch    => 5.010001,
 );
 
 my %additional = (
@@ -32,11 +32,11 @@ sub _enable {
 		feature->import($pragma);
 		_enable(@{ $additional{$pragma} }) if $additional{$pragma};
 	}
-	elsif (not $grandfathered{$pragma}) {
+	elsif (not exists $min_version{$pragma}) {
 		croak "Can't enable unknown feature $pragma";
 	}
-	elsif ($grandfathered{$pragma} > $]) {
-		croak "Need perl $grandfathered{$pragma} for feature $pragma";
+	elsif ($min_version{$pragma} > $]) {
+		croak "Need perl $min_version{$pragma} for feature $pragma";
 	}
 }
 
@@ -60,7 +60,7 @@ sub _disable {
 		feature->unimport($pragma);
 		_disable(@{ $additional{$pragma} }) if $additional{$pragma};
 	}
-	elsif (not $grandfathered{$pragma}) {
+	elsif (not exists $min_version{$pragma}) {
 		carp "Can't disable unknown feature $pragma, ignoring";
 	}
 }
