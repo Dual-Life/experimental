@@ -112,7 +112,8 @@ The supported features, documented further below, are:
 	array_base    - allow the use of $[ to change the starting index of @array
 	autoderef     - allow push, each, keys, and other built-ins on references
 	lexical_topic - allow the use of lexical $_ via "my $_"
-	postderef     - allow the use of postfix dereferencing expressions
+	postderef     - allow the use of postfix dereferencing expressions, including
+	                in interpolating strings
 	regex_sets    - allow extended bracketed character classes in regexps
 	signatures    - allow subroutine signatures (for named arguments)
 	smartmatch    - allow the use of ~~, given, and when
