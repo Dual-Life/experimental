@@ -121,22 +121,3 @@ The supported features, documented further below, are:
 
 Because of the nature of the features it enables, forward compatibility can not
 be guaranteed in any way.
-
-=head2 Options
-
-=head3 smartmatch
-
-This is effectively equivalent to
-
- no if $] >= 5.017011, warnings => 'experimental::smartmatch';
-
-Except that on versions that do no support smartmatch, it will give an explicit
-error.
-
-=head3 lexical_subs
-
-This is equivalent to
-
- use feature 'lexical_subs';
- no warnings 'experimental::lexical_subs';
-
