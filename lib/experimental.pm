@@ -113,6 +113,8 @@ The supported features, documented further below, are:
 	autoderef     - allow push, each, keys, and other built-ins on references
 	lexical_topic - allow the use of lexical $_ via "my $_"
 	postderef     - allow the use of postfix dereferencing expressions
+	regex_sets    - allow extended bracketed character classes in regexps
+	signatures    - allow subroutine signatures (for named arguments)
 	smartmatch    - allow the use of ~~, given, and when
 
 =head2 Disclaimer
@@ -128,7 +130,8 @@ This is effectively equivalent to
 
  no if $] >= 5.017011, warnings => 'experimental::smartmatch';
 
-Except that on versions that do no support smartmatch, it will give an explicit error.
+Except that on versions that do no support smartmatch, it will give an explicit
+error.
 
 =head3 lexical_subs
 
