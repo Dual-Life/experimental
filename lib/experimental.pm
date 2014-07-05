@@ -11,13 +11,14 @@ my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offset
 my %features = map { $_ => 1 } keys %feature::feature;
 
 my %min_version = (
-	array_base    => version->new('5'),
-	autoderef     => version->new('5.14.0'),
-	lexical_topic => version->new('5.10.0'),
-	regex_sets    => version->new('5.18.0'),
-	smartmatch    => version->new('5.10.1'),
-	signatures    => version->new('5.20.0'),
+	array_base    => '5',
+	autoderef     => '5.14.0',
+	lexical_topic => '5.10.0',
+	regex_sets    => '5.18.0',
+	smartmatch    => '5.10.1',
+	signatures    => '5.20.0',
 );
+$_ = version->new($_) for values %min_version;
 
 my %additional = (
 	postderef  => ['postderef_qq'],
