@@ -2,6 +2,7 @@ Revision history for experimental
 
 {{$NEXT}}
           Give better perl version formatting
+          Fix smartmatch/switch description
 
 0.007     2014-03-13 09:33:16CET+0100 Europe/Amsterdam
           Rewrote much of the documentation [Ricardo Signes, Karen Etheridge]

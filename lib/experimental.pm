@@ -117,7 +117,8 @@ The supported features, documented further below, are:
 	                in interpolating strings
 	regex_sets    - allow extended bracketed character classes in regexps
 	signatures    - allow subroutine signatures (for named arguments)
-	smartmatch    - allow the use of ~~, given, and when
+	smartmatch    - allow the use of ~~
+	switch        - allow the use of ~~, given, and when
 
 =head2 Disclaimer
 
