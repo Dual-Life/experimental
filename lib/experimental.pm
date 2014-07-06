@@ -11,12 +11,23 @@ my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offset
 my %features = map { $_ => 1 } keys %feature::feature;
 
 my %min_version = (
-	array_base    => '5',
-	autoderef     => '5.14.0',
-	lexical_topic => '5.10.0',
-	regex_sets    => '5.18.0',
-	smartmatch    => '5.10.1',
-	signatures    => '5.20.0',
+	array_base      => '5',
+	autoderef       => '5.14.0',
+	current_sub     => '5.16.0',
+	evalbytes       => '5.16.0',
+	fc              => '5.16.0',
+	lexical_topic   => '5.10.0',
+	lexical_subs    => '5.18.0',
+	postderef       => '5.20.0',
+	postderef_qq    => '5.20.0',
+	regex_sets      => '5.18.0',
+	say             => '5.10.0',
+	smartmatch      => '5.10.0',
+	signatures      => '5.20.0',
+	state           => '5.10.0',
+	switch          => '5.10.0',
+	unicode_eval    => '5.16.0',
+	unicode_strings => '5.12.0',
 );
 $_ = version->new($_) for values %min_version;
 
