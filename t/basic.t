@@ -16,6 +16,21 @@ else {
 }
 
 if ($] >= 5.010001) {
+	is (eval <<'END', 1, 'switch compiles') or diag $@;
+	use experimental 'switch';
+	sub bar { 1 };
+	given(1) {
+		when (\&bar) {
+			pass("bar matches 1");
+		}
+		default {
+			fail("bar matches 1");
+		}
+	}
+END
+}
+
+if ($] >= 5.010001) {
 	is (eval <<'END', 1, 'smartmatch compiles') or diag $@;
 	use experimental 'smartmatch';
 	sub bar { 1 };

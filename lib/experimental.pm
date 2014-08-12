@@ -8,7 +8,14 @@ use feature ();
 use Carp qw/croak carp/;
 
 my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offsets;
-my %features = map { $_ => 1 } keys %feature::feature;
+my %features = map { $_ => 1 } $] > 5.015006 ? keys %feature::feature : do {
+	my @features;
+	if ($] >= 5.010) {
+		push @features, qw/switch say state/;
+		push @features, 'unicode_strings' if $] > 5.011002;
+	}
+	@features;
+};
 
 my %min_version = (
 	array_base      => '5',
