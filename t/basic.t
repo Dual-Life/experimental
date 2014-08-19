@@ -9,6 +9,7 @@ if ($] >= 5.010000) {
 	use experimental 'lexical_topic';
 	my $_ = 1;
 	is($_, 1, '$_ is 1');
+	1;
 END
 }
 else {
@@ -27,6 +28,7 @@ if ($] >= 5.010001) {
 			fail("bar matches 1");
 		}
 	}
+	1;
 END
 }
 
@@ -35,6 +37,7 @@ if ($] >= 5.010001) {
 	use experimental 'smartmatch';
 	sub bar { 1 };
 	is(1 ~~ \&bar, 1, "is 1");
+	1;
 END
 }
 

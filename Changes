@@ -1,6 +1,7 @@
 Revision history for experimental
 
 {{$NEXT}}
+          Add returning 1's to evals in tests
 
 0.009     2014-08-16 13:43:53+02:00 Europe/Amsterdam
           Hardcode features for perl < 5.15.7
