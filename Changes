@@ -1,6 +1,7 @@
 Revision history for experimental
 
 {{$NEXT}}
+          Clarified which order to apply pragmas [Grant McLean]
 
 0.010     2014-08-19 17:47:20+02:00 Europe/Amsterdam
           Add returning 1's to evals in tests
