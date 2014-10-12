@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.012     2014-10-12 12:10:06+02:00 Europe/Amsterdam
           Added lvalue references feature
 
 0.011     2014-09-27 14:08:47+02:00 Europe/Amsterdam
