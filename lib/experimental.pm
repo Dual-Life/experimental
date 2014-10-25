@@ -25,9 +25,9 @@ my %min_version = (
 	fc              => '5.16.0',
 	lexical_topic   => '5.10.0',
 	lexical_subs    => '5.18.0',
-	lvalue_refs     => '5.21.5',
 	postderef       => '5.20.0',
 	postderef_qq    => '5.20.0',
+	refaliasing     => '5.21.5',
 	regex_sets      => '5.18.0',
 	say             => '5.10.0',
 	smartmatch      => '5.10.0',
@@ -139,9 +139,9 @@ The supported features, documented further below, are:
 	array_base    - allow the use of $[ to change the starting index of @array
 	autoderef     - allow push, each, keys, and other built-ins on references
 	lexical_topic - allow the use of lexical $_ via "my $_"
-	lvalue_refs   - allow aliasing via \$x = \$y
 	postderef     - allow the use of postfix dereferencing expressions, including
 	                in interpolating strings
+	refaliasing   - allow aliasing via \$x = \$y
 	regex_sets    - allow extended bracketed character classes in regexps
 	signatures    - allow subroutine signatures (for named arguments)
 	smartmatch    - allow the use of ~~

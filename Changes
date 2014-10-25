@@ -1,6 +1,7 @@
 Revision history for experimental
 
 {{$NEXT}}
+          Rename lvalue_refs to refaliasing
 
 0.012     2014-10-12 12:10:06+02:00 Europe/Amsterdam
           Added lvalue references feature
