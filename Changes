@@ -1,6 +1,7 @@
 Revision history for experimental
 
 {{$NEXT}}
+          Add bitwise to list of known features
 
 0.013     2014-10-25 21:54:47+02:00 Europe/Amsterdam
           Rename lvalue_refs to refaliasing
