@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.014     2015-09-12 00:29:37+02:00 Europe/Amsterdam
           Add bitwise to list of known features
 
 0.013     2014-10-25 21:54:47+02:00 Europe/Amsterdam
