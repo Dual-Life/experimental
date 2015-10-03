@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.015     2015-10-03 14:21:18+02:00 Europe/Amsterdam
           Make lexical_topic a deprecated feature
 
 0.014     2015-09-12 00:29:37+02:00 Europe/Amsterdam
