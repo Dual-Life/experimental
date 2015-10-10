@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.016     2015-10-10 12:46:48+02:00 Europe/Amsterdam
           Fix deprecation check
 
 0.015     2015-10-03 14:21:18+02:00 Europe/Amsterdam
