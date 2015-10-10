@@ -1,6 +1,7 @@
 Revision history for experimental
 
 {{$NEXT}}
+          Fix deprecation check
 
 0.015     2015-10-03 14:21:18+02:00 Europe/Amsterdam
           Make lexical_topic a deprecated feature
