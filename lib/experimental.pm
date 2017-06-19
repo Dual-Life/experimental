@@ -37,6 +37,7 @@ my %min_version = (
 	switch          => '5.10.0',
 	unicode_eval    => '5.16.0',
 	unicode_strings => '5.12.0',
+	const_attr      => '5.22.0',
 );
 my %max_version = (
 	lexical_topic   => '5.23.4',
