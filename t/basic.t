@@ -15,9 +15,6 @@ if ($] >= 5.010000) {
 	1;
 END
 }
-else {
-	fail("No experimental features available on perl $]");
-}
 
 if ($] >= 5.010001) {
 	is (eval <<'END', 1, 'switch compiles') or diag $@;

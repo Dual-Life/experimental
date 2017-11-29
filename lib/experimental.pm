@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use version ();
 
-use feature ();
+BEGIN { eval { require feature } };
 use Carp qw/croak carp/;
 
 my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offsets;
