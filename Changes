@@ -1,6 +1,7 @@
 Revision history for experimental
 
 {{$NEXT}}
+          - Make test pass when warnings are enabled
 
 0.017     2017-11-14 16:23:53+01:00 Europe/Amsterdam
           Remove auto_deref for 5.24+
