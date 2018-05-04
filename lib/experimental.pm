@@ -23,6 +23,7 @@ my %min_version = (
 	bitwise         => '5.22.0',
 	const_attr      => '5.22.0',
 	current_sub     => '5.16.0',
+	declared_refs   => '5.26.0',
 	evalbytes       => '5.16.0',
 	fc              => '5.16.0',
 	lexical_topic   => '5.10.0',
@@ -48,8 +49,9 @@ $_ = version->new($_) for values %min_version;
 $_ = version->new($_) for values %max_version;
 
 my %additional = (
-	postderef  => ['postderef_qq'],
-	switch     => ['smartmatch'],
+	postderef     => ['postderef_qq'],
+	switch        => ['smartmatch'],
+	declared_refs => ['refaliasing'],
 );
 
 sub _enable {
