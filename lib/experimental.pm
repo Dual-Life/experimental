@@ -41,6 +41,7 @@ my %min_version = (
 	unicode_strings => '5.12.0',
 );
 my %max_version = (
+	array_base      => '5.29.4',
 	autoderef       => '5.23.1',
 	lexical_topic   => '5.23.4',
 );
