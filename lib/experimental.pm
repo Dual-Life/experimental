@@ -40,14 +40,14 @@ my %min_version = (
 	unicode_eval    => '5.16.0',
 	unicode_strings => '5.12.0',
 );
-my %max_version = (
+my %removed_in_version = (
 	array_base      => '5.29.4',
 	autoderef       => '5.23.1',
 	lexical_topic   => '5.23.4',
 );
 
 $_ = version->new($_) for values %min_version;
-$_ = version->new($_) for values %max_version;
+$_ = version->new($_) for values %removed_in_version;
 
 my %additional = (
 	postderef     => ['postderef_qq'],
@@ -78,8 +78,8 @@ sub _enable {
 		}
 		croak "Need perl $stable or later for feature $pragma";
 	}
-	elsif ($] >= ($max_version{$pragma} || 7)) {
-		croak "Experimental feature $pragma has been removed from perl in version $max_version{$pragma}";
+	elsif ($] >= ($removed_in_version{$pragma} || 7)) {
+		croak "Experimental feature $pragma has been removed from perl in version $removed_in_version{$pragma}";
 	}
 }
 
