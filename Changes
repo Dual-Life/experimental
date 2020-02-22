@@ -1,6 +1,7 @@
 Revision history for experimental
 
 {{$NEXT}}
+          - Add the isa feature
 
 0.020     2018-05-09 21:31:22+02:00 Europe/Amsterdam
           - Add the declared_refs feature
