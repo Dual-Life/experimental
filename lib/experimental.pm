@@ -26,6 +26,7 @@ my %min_version = (
 	declared_refs   => '5.26.0',
 	evalbytes       => '5.16.0',
 	fc              => '5.16.0',
+	isa             => '5.31.7',
 	lexical_topic   => '5.10.0',
 	lexical_subs    => '5.18.0',
 	postderef       => '5.20.0',
@@ -171,6 +172,10 @@ This was added in perl 5.22.0.
 =item * C<declared_refs> - enables aliasing via assignment to references
 
 This was added in perl 5.26.0.
+
+=item * C<isa> - allow the use of the C<isa> infix operator
+
+This was added in perl 5.32.0.
 
 =item * C<lexical_topic> - allow the use of lexical C<$_> via C<my $_>.
 
