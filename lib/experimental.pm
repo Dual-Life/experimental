@@ -18,6 +18,7 @@ my %features = map { $_ => 1 } $] > 5.015006 ? keys %feature::feature : do {
 };
 
 my %min_version = (
+	args_array_with_signatures => '5.20.0',
 	array_base      => '5',
 	autoderef       => '5.14.0',
 	bitwise         => '5.22.0',

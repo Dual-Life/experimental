@@ -4,6 +4,7 @@ Revision history for experimental
           - Added defer experiment
           - Added for_list experiment
           - Added builtin experiment
+          - args_array_with_signatures
 
 0.025     2021-07-30 14:41:39+02:00 Europe/Amsterdam
           - Add missing documentation for try
