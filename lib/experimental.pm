@@ -27,6 +27,7 @@ my %min_version = (
 	defer           => '5.35.4',
 	evalbytes       => '5.16.0',
 	fc              => '5.16.0',
+	for_list        => '5.35.5',
 	isa             => '5.31.7',
 	lexical_topic   => '5.10.0',
 	lexical_subs    => '5.18.0',
