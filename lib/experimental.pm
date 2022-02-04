@@ -72,12 +72,8 @@ sub _enable {
 		croak "Can't enable unknown feature $pragma";
 	}
 	elsif ($] < $min_version{$pragma}) {
-		my $stable = $min_version{$pragma};
-		if ($stable->{version}[1] % 2) {
-			$stable = version->new(
-				"5.".($stable->{version}[1]+1).'.0'
-			);
-		}
+		my $stable = $min_version{$pragma}->stringify;
+		$stable =~ s/^ 5\. ([0-9]?[13579]) \. \d+ $/"5." . ($1 + 1) . ".0"/xe;
 		croak "Need perl $stable or later for feature $pragma";
 	}
 	elsif ($] >= ($removed_in_version{$pragma} || 7)) {
