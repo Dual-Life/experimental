@@ -24,6 +24,7 @@ my %min_version = (
 	const_attr      => '5.22.0',
 	current_sub     => '5.16.0',
 	declared_refs   => '5.26.0',
+	defer           => '5.35.4',
 	evalbytes       => '5.16.0',
 	fc              => '5.16.0',
 	isa             => '5.31.7',
