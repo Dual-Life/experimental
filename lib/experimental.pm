@@ -21,6 +21,7 @@ my %min_version = (
 	array_base      => '5',
 	autoderef       => '5.14.0',
 	bitwise         => '5.22.0',
+	builtin         => '5.35.9',
 	const_attr      => '5.22.0',
 	current_sub     => '5.16.0',
 	declared_refs   => '5.26.0',

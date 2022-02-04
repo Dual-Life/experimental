@@ -3,6 +3,7 @@ Revision history for experimental
 {{$NEXT}}
           - Added defer experiment
           - Added for_list experiment
+          - Added builtin experiment
 
 0.025     2021-07-30 14:41:39+02:00 Europe/Amsterdam
           - Add missing documentation for try
