@@ -22,7 +22,7 @@ my %min_version = (
 	array_base      => '5',
 	autoderef       => '5.14.0',
 	bitwise         => '5.22.0',
-	builtin         => '5.35.9',
+	builtin         => '5.35.7',
 	const_attr      => '5.22.0',
 	current_sub     => '5.16.0',
 	declared_refs   => '5.26.0',
@@ -47,9 +47,9 @@ my %min_version = (
 	unicode_strings => '5.12.0',
 );
 my %removed_in_version = (
-	array_base      => '5.29.4',
-	autoderef       => '5.23.1',
-	lexical_topic   => '5.23.4',
+	array_base      => '5.30.0',
+	autoderef       => '5.24.0',
+	lexical_topic   => '5.24.0',
 );
 
 $_ = version->new($_) for values %min_version;
