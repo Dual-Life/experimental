@@ -125,8 +125,8 @@ sub unimport {
 
 =head1 SYNOPSIS
 
- use experimental 'lexical_subs', 'smartmatch';
- my sub foo { $_[0] ~~ 1 }
+ use experimental 'lexical_subs', 'signatures';
+ my sub plus_one($value) { $value + 1 }
 
 =head1 DESCRIPTION
 
@@ -154,17 +154,25 @@ The supported features, documented further below, are:
 
 =over 4
 
+=item * C<args_array_with_signatures> - allow C<@_> to be used in signatured subs.
+
+This is supported on perl 5.20.0 and above, but is likely to be removed in the future.
+
 =item * C<array_base> - allow the use of C<$[> to change the starting index of C<@array>.
 
-This is supported on all versions of perl.
+This was removed in perl 5.30.0.
 
 =item * C<autoderef> - allow push, each, keys, and other built-ins on references.
 
-This was added in perl 5.14.0 and removed in perl 5.23.1.
+This was added in perl 5.14.0 and removed in perl 5.24.0.
 
 =item * C<bitwise> - allow the new stringwise bit operators
 
 This was added in perl 5.22.0.
+
+=item * C<builtin> - allow the use of the functions in the builtin:: namespace
+
+This was added in perl 5.36.0
 
 =item * C<const_attr> - allow the :const attribute on subs
 
@@ -174,13 +182,21 @@ This was added in perl 5.22.0.
 
 This was added in perl 5.26.0.
 
+=item * C<defer> - enables the use of defer blocks
+
+This was added in perl 5.36.0
+
+=item * C<for_list> - allows iterating over multiple values at a time with C<for>
+
+This was added in perl 5.36.0
+
 =item * C<isa> - allow the use of the C<isa> infix operator
 
 This was added in perl 5.32.0.
 
 =item * C<lexical_topic> - allow the use of lexical C<$_> via C<my $_>.
 
-This was added in perl 5.10.0 and removed in perl 5.23.4.
+This was added in perl 5.10.0 and removed in perl 5.24.0.
 
 =item * C<lexical_subs> - allow the use of lexical subroutines.
 
