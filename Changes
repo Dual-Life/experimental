@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.026     2022-02-08 14:41:02+01:00 Europe/Amsterdam
           - Added defer experiment
           - Added for_list experiment
           - Added builtin experiment
