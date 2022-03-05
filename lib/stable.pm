@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use version ();
 
-BEGIN { eval { require experimental } };
+use experimental ();
 use Carp qw/croak carp/;
 
 my %allow_at = (
