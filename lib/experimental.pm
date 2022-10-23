@@ -8,6 +8,7 @@ BEGIN { eval { require feature } };
 use Carp qw/croak carp/;
 
 my %warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::Offsets;
+my %removed_warnings = map { $_ => 1 } grep { /^experimental::/ } keys %warnings::NoOp;
 my %features = map { $_ => 1 } $] > 5.015006 ? keys %feature::feature : do {
 	my @features;
 	if ($] >= 5.010) {
@@ -71,6 +72,9 @@ sub _enable {
 	}
 	elsif ($features{$pragma}) {
 		feature->import($pragma);
+		_enable(@{ $additional{$pragma} }) if $additional{$pragma};
+	}
+	elsif ($removed_warnings{"experimental::$pragma"}) {
 		_enable(@{ $additional{$pragma} }) if $additional{$pragma};
 	}
 	elsif (not exists $min_version{$pragma}) {
