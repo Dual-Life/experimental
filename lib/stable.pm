@@ -77,22 +77,53 @@ pragma exists to turn on experimental features only when it's known that
 their behavior in the running perl is their stable behavior.
 
 If you try to use an experimental feature that isn't stable or available on
-the running version of perl, an exception will be thrown.
+the running version of perl, an exception will be thrown.  You should also take
+care that you've required the version of C<stable> that you need!
+
+If it's not immediately obvious why, here's a bit of explanation:
+
+=over 4
+
+=item *
+
+C<stable> comes with perl, starting with perl v5.38.
+
+=item *
+
+Imagine that v5.38 adds a feature called "florps".  It will stop being
+experimental in v5.42.
+
+=item *
+
+The version of C<stable> that comes with perl v5.38 can't know that the
+I<florps> experiment will succeed, so you can't C<use stable 'florps'> on the
+version of stable ships with v5.38, because it can't see the future!
+
+=item *
+
+You'll need to write C<use stable 1.234 'florps'> to say that you need version
+1.234 of stable, which is when I<florps> became known to stable.
+
+=back
+
+Sure, it's a little weird, but it's worth it!  The documentation of this pragma
+will tell you what version of C<stable> you need to require in order to use
+various features.  See below.
 
 At present there are only a few "stable" features:
 
 =over 4
 
-=item * C<bitwise> - stable as of 5.22
+=item * C<bitwise> - stable as of perl 5.22, available via stable 0.031
 
-=item * C<isa> - stable as of 5.32
+=item * C<isa> - stable as of perl 5.32, available via stable 0.031
 
-=item * C<lexical_subs> - stable as of 5.22
+=item * C<lexical_subs> - stable as of perl 5.22, available via stable 0.031
 
 Lexical subroutines were actually added in 5.18, and their design did not
 change, but significant bugs makes them unsafe to use before 5.22.
 
-=item * C<postderef> - stable as of 5.20
+=item * C<postderef> - stable as of perl 5.20, available via stable 0.031
 
 =back
 
