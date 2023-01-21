@@ -29,7 +29,7 @@ my %min_version = (
 	declared_refs   => '5.26.0',
 	defer           => '5.35.4',
 	evalbytes       => '5.16.0',
-	extra_paired_delims => '5.35.9',
+	extra_paired_delimiters => '5.35.9',
 	fc              => '5.16.0',
 	for_list        => '5.35.5',
 	isa             => '5.31.7',
@@ -191,7 +191,7 @@ This was added in perl 5.26.0.
 
 This was added in perl 5.36.0
 
-=item * C<extra_paired_delims> - enables the use of more paired string delimiters than the
+=item * C<extra_paired_delimiters> - enables the use of more paired string delimiters than the
 traditional four, S<C<< <  > >>>, S<C<( )>>, S<C<{ }>>, and S<C<[ ]>>.
 
 This was added in perl 5.36.

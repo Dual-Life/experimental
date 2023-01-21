@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+          - Fix the name of the extra_paired_delimiters feature (previously
+            mis-documented as extra_paired_delims)
 
 0.030     2022-12-10 13:02:15+01:00 Europe/Amsterdam
           - Adapt to future deprecation of smartmatch
