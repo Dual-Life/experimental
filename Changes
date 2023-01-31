@@ -1,6 +1,8 @@
 Revision history for experimental
 
 {{$NEXT}}
+
+0.031     2023-01-31 22:46:02+01:00 Europe/Amsterdam
           - Fix the name of the extra_paired_delimiters feature (previously
             mis-documented as extra_paired_delims)
           - Added "stable.pm", which acts like experimental.pm only for
