@@ -210,7 +210,7 @@ This was added in perl 5.10.0 and removed in perl 5.24.0.
 
 =item * C<lexical_subs> - allow the use of lexical subroutines.
 
-This was added in 5.18.0.
+This was added in 5.18.0, and became non-experimental (and always enabled) in 5.26.0.
 
 =item * C<postderef> - allow the use of postfix dereferencing expressions
 
