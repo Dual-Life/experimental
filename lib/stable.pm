@@ -48,7 +48,7 @@ sub unimport {
 
 =head1 DESCRIPTION
 
-The L<experimental> pragma makes it easy to turn on experimental while turning
+The L<experimental> pragma makes it easy to turn on experiments while turning
 off associated warnings.  You should read about it, if you don't already know
 what it does.
 
