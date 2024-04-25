@@ -12,6 +12,9 @@ my %allow_at = (
 	isa           => 5.032000,
 	lexical_subs  => 5.022000,
 	postderef     => 5.020000,
+	extra_paired_delimiters => 5.036000,
+	const_attr    => 5.022000,
+	for_list      => 5.036000,
 );
 
 sub import {
@@ -124,6 +127,12 @@ Lexical subroutines were actually added in 5.18, and their design did not
 change, but significant bugs makes them unsafe to use before 5.22.
 
 =item * C<postderef> - stable as of perl 5.20, available via stable 0.031
+
+=item * C<extra_paired_delimiters> - stable as of perl 5.36, available via stable 0.032
+
+=item * C<const_attr> - stable as of perl 5.22, available via stable 0.032
+
+=item * C<for_list> - stable as of perl 5.36, available via stable 0.032
 
 =back
 
