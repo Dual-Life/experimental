@@ -245,13 +245,14 @@ This was added in perl 5.20.0.
 This was added in perl 5.10.0, but it should be noted there are significant
 incompatibilities between 5.10.0 and 5.10.1.
 
-The feature is going to be deprecated in perl 5.38.0, and removed in 5.42.0.
+The feature was deprecated in perl 5.38.0, and undeprecated in 5.42.0.
 
 =item * C<switch> - allow the use of C<~~>, given, and when
 
 This was added in perl 5.10.0.
 
-The feature is going to be deprecated in perl 5.38.0, and removed in 5.42.0.
+The feature was deprecated in perl 5.38.0, and undeprecated in
+5.42.0.
 
 =item * C<try> - allow the use of C<try> and C<catch>
 
