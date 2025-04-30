@@ -230,7 +230,11 @@ This was added in perl 5.22.0.
 
 =item * C<regex_sets> - allow extended bracketed character classes in regexps
 
-This was added in perl 5.18.0.
+This was added in perl 5.18.0, and became non-experimental (and always
+enabled) in 5.36.0.
+
+This is documented at
+L<perlrecharclass/Extended Bracketed Character Classes>.
 
 =item * C<signatures> - allow subroutine signatures (for named arguments)
 
