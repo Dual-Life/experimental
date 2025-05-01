@@ -47,11 +47,13 @@ my %min_version = (
 	try             => '5.34.0',
 	unicode_eval    => '5.16.0',
 	unicode_strings => '5.12.0',
+	win32_perlio    => '5.8.0',
 );
 my %removed_in_version = (
 	array_base      => '5.30.0',
 	autoderef       => '5.24.0',
 	lexical_topic   => '5.24.0',
+	win32_perlio    => '5.36.0',
 );
 
 $_ = version->new($_) for values %min_version;
