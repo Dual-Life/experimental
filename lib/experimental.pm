@@ -24,6 +24,7 @@ my %min_version = (
 	autoderef       => '5.14.0',
 	bitwise         => '5.22.0',
 	builtin         => '5.35.7',
+	class           => '5.37.9',
 	const_attr      => '5.22.0',
 	current_sub     => '5.16.0',
 	declared_refs   => '5.26.0',
@@ -184,6 +185,10 @@ This was added in perl 5.36.0
 =item * C<const_attr> - allow the :const attribute on subs
 
 This was added in perl 5.22.0.
+
+=item * C<class> - enables the C<class>, C<field>, and C<method> syntax
+
+This was added in perl 5.38.0.
 
 =item * C<declared_refs> - enables aliasing via assignment to references
 
