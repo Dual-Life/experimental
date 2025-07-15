@@ -34,6 +34,8 @@ my %min_version = (
 	fc              => '5.16.0',
 	for_list        => '5.35.5',
 	isa             => '5.31.7',
+	keyword_all     => '5.41.7',
+	keyword_any     => '5.41.7',
 	lexical_topic   => '5.10.0',
 	lexical_subs    => '5.18.0',
 	postderef       => '5.20.0',
@@ -210,6 +212,14 @@ This was added in perl 5.36.0
 =item * C<isa> - allow the use of the C<isa> infix operator
 
 This was added in perl 5.32.0.
+
+=item * C<keyword_all> - enables the C<all> operator
+
+This was added in perl 5.42.0.
+
+=item * C<keyword_any> - enables the C<any> operator
+
+This was added in perl 5.42.0.
 
 =item * C<lexical_topic> - allow the use of lexical C<$_> via C<my $_>.
 
