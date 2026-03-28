@@ -182,7 +182,7 @@ This was added in perl 5.22.0.
 
 =item * C<builtin> - allow the use of the functions in the builtin:: namespace
 
-This was added in perl 5.36.0
+This was added in perl 5.36.0.
 
 =item * C<const_attr> - allow the :const attribute on subs
 
@@ -198,16 +198,16 @@ This was added in perl 5.26.0.
 
 =item * C<defer> - enables the use of defer blocks
 
-This was added in perl 5.36.0
+This was added in perl 5.36.0.
 
 =item * C<extra_paired_delimiters> - enables the use of more paired string delimiters than the
 traditional four, S<C<< <  > >>>, S<C<( )>>, S<C<{ }>>, and S<C<[ ]>>.
 
-This was added in perl 5.36.
+This was added in perl 5.36.0.
 
 =item * C<for_list> - allows iterating over multiple values at a time with C<for>
 
-This was added in perl 5.36.0
+This was added in perl 5.36.0.
 
 =item * C<isa> - allow the use of the C<isa> infix operator
 
@@ -273,7 +273,7 @@ The feature was deprecated in perl 5.38.0, and undeprecated in
 
 =item * C<try> - allow the use of C<try> and C<catch>
 
-This was added in perl 5.34.0
+This was added in perl 5.34.0.
 
 =item * C<win32_perlio> - allows the use of the :win32 IO layer.
 
